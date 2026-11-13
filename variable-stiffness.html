@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A cable driven arm that changes its stiffness through its transmission geometry.">
+  <meta name="theme-color" content="#fafbf8">
+  <title>Variable Stiffness Manipulator — Yiwen Gao</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Yiwen Gao</a>
+      <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <article class="project">
+      <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+      <header class="page-head">
+        <p class="eyebrow">Stanford University · Summer research · 2025</p>
+        <h1>Variable Stiffness Manipulator</h1>
+        <p class="lead">A cable driven arm that changes its stiffness through its transmission geometry.</p>
+      </header><figure class=wide><a href="vsm-prototype.webp" aria-label="View larger image: Prototype with three variable stiffness modules."><img src="vsm-prototype.webp" alt="Annotated prototype of the two degree of freedom cable driven arm" loading="lazy"></a><figcaption>Prototype with three variable stiffness modules.</figcaption></figure><section class="project-section"><h2>Design</h2><p>I designed a variable stiffness module around a torsion spring and floating pulleys. Cable tension rotates the pulley assembly, changing the cable path and creating a nonlinear relationship between tension and displacement. We integrated three modules into a two joint arm using an N+1 actuation layout.</p><div class="figures"><figure><a href="vsm-mechanism.webp" aria-label="View larger image: Module geometry in its compliant and stiff states."><img src="vsm-mechanism.webp" alt="Diagram showing the variable stiffness module in low and high tension states" loading="lazy"></a><figcaption>Module geometry in its compliant and stiff states.</figcaption></figure><figure><a href="vsm-module-tests.webp" aria-label="View larger image: Measured tension–displacement curves compared with the theoretical model."><img src="vsm-module-tests.webp" alt="Measured and theoretical cable tension against cable displacement" loading="lazy"></a><figcaption>Measured tension–displacement curves compared with the theoretical model.</figcaption></figure></div></section><section class="project-section"><h2>Control and testing</h2><p>Joint position was controlled with PID feedback. A separate cable co-activation command adjusted internal tension and modulated the overall stiffness. The prototype demonstrated roughly a sevenfold increase in endpoint stiffness across the tested range, along with a shift in dominant natural frequency.</p><div class="figures"><figure><a href="vsm-control.webp" aria-label="View larger image: Joint position feedback and cable co-activation."><img src="vsm-control.webp" alt="Block diagram of joint position feedback and cable co-activation" loading="lazy"></a><figcaption>Joint position feedback and cable co-activation.</figcaption></figure><figure><a href="vsm-stiffness.webp" aria-label="View larger image: Endpoint stiffness versus commanded co-activation force."><img src="vsm-stiffness.webp" alt="Plot of measured endpoint stiffness versus commanded co-activation force" loading="lazy"></a><figcaption>Endpoint stiffness versus commanded co-activation force.</figcaption></figure></div></section>
+      <p class="credit">Yiwen Gao, Connor Yako, Shenli Yuan, and J. Kenneth Salisbury · Salisbury Robotics Lab</p>
+      <div class="project-next">
+        <a href="index.html"><span aria-hidden="true">←</span> All projects</a>
+        <a href="underactuated-gripper.html">Next: Underactuated Three-Finger Gripper <span aria-hidden="true">→</span></a>
+      </div>
+    </article></main>
+  <footer class="wrap footer">
+    <span>© 2026 Yiwen Gao</span>
+    <a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>
