@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Measurement and Control System for a High-Speed Bearing Friction Torque Test Rig">
+  <meta name="theme-color" content="#fafbf8">
+  <title>Measurement and Control System for a High-Speed Bearing Friction Torque Test Rig — Yiwen Gao</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Yiwen Gao</a>
+      <nav aria-label="Main navigation"><a href="index.html">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+  <article class="project portfolio-project">
+    <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+    <header class="page-head"><h1>Measurement and Control System for a High-Speed Bearing Friction Torque Test Rig</h1><p class="project-byline">Yiwen Gao · Undergraduate Thesis · Shanghai Jiao Tong University · June 2026</p><p class="project-byline">Supervisor: Zhinan Zhang</p></header>
+    
+<p class="lead">This undergraduate thesis developed the measurement and control system for a bearing test rig used to study friction torque in electric-drive applications.</p>
+<dl class="thesis-stats">
+  <div><dt>Spindle setpoint tested</dt><dd>15,000 rpm</dd></div>
+  <div><dt>Friction torque test matrix</dt><dd>8 speeds × 8 loads</dd></div>
+</dl>
+<section class="project-section">
+  <h2>Measurement and control architecture</h2>
+  <p>I integrated a LabVIEW host, NI USB-6211 data acquisition, and a variable-frequency drive for closed-loop spindle speed control. A PLC and servo system established and held the radial load. The two subsystems worked together to monitor spindle speed, torque, and load.</p>
+  <figure class="project-figure "><a href="thesis-architecture.webp"><img src="thesis-architecture.webp" alt="Thesis Fig. 3-1. Hardware connections for the measurement and control system." loading="lazy" decoding="async"></a><figcaption>Thesis Fig. 3-1. Hardware connections for the measurement and control system.</figcaption></figure>
+</section>
+<section class="project-section">
+  <h2>Spindle control and test software</h2>
+  <p>I modeled the three-phase induction motor in a software-in-the-loop simulation and implemented position-form and incremental PID algorithms. The LabVIEW application supported automated test sequences, input validation, filtering, and data logging.</p>
+  <figure class="project-figure "><a href="thesis-labview.webp"><img src="thesis-labview.webp" alt="Thesis Fig. 3-17. LabVIEW interface in manual test mode." loading="lazy" decoding="async"></a><figcaption>Thesis Fig. 3-17. LabVIEW interface in manual test mode.</figcaption></figure>
+</section>
+<section class="project-section">
+  <h2>Validation on the test rig</h2>
+  <p>I compared simulated and measured spindle responses at 5,000, 10,000, and 15,000 rpm and under a ramped speed command. I also measured bearing friction torque at eight spindle speeds from 1,000 to 15,000 rpm, each at eight radial load settings.</p>
+  <figure class="project-figure "><a href="thesis-speed-tests.webp"><img src="thesis-speed-tests.webp" alt="Thesis Fig. 4-3. Spindle response at the 15,000 rpm setpoint. Simulation on the left and hardware on the right." loading="lazy" decoding="async"></a><figcaption>Thesis Fig. 4-3. Spindle response at the 15,000 rpm setpoint. Simulation on the left and hardware on the right.</figcaption></figure>
+  <figure class="project-figure "><a href="thesis-ramp-test.webp"><img src="thesis-ramp-test.webp" alt="Thesis Fig. 4-4. Simulated and measured spindle response to a ramped speed command." loading="lazy" decoding="async"></a><figcaption>Thesis Fig. 4-4. Simulated and measured spindle response to a ramped speed command.</figcaption></figure>
+</section>
+    <div class="project-next">
+      <a href="index.html">← All projects</a>
+      <a href="variable-stiffness.html">Next: Novel Transmission Employing Kinematic Stiffening and N+1 Actuation →</a>
+    </div>
+  </article></main>
+  <footer class="wrap footer"><span>© 2026 Yiwen Gao</span><a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a></footer>
+</body>
+</html>

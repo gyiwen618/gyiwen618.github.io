@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Two concepts for preserving clamping force near full closure.">
+  <meta name="description" content="Flexible Gripper, Robot ‘Konka-1’">
   <meta name="theme-color" content="#fafbf8">
-  <title>Flexible Gripper Concepts — Yiwen Gao</title>
+  <title>Flexible Gripper, Robot ‘Konka-1’ — Yiwen Gao</title>
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,26 +14,20 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">Yiwen Gao</a>
-      <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav>
+      <nav aria-label="Main navigation"><a href="index.html">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav>
     </div>
   </header>
   <main id="main" class="wrap">
-    <article class="project">
-      <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
-      <header class="page-head">
-        <p class="eyebrow">Chengdu Humanoid Robot Innovation Center · Internship · 2024</p>
-        <h1>Flexible Gripper Concepts</h1>
-        <p class="lead">Two concepts for preserving clamping force near full closure.</p>
-      </header><figure class=wide><a href="fin-ray-tendon.webp" aria-label="View larger image: Cable-driven concept in its open and closed configurations."><img src="fin-ray-tendon.webp" alt="Engineering sketches of the flexible gripper and cable routing in open and closed positions" loading="lazy"></a><figcaption>Cable-driven concept in its open and closed configurations.</figcaption></figure><section class="project-section"><h2>Sliding sleeve</h2><p>The original flexible fingers provided limited clamping force on thin objects. In the first concept, a rack-driven sleeve engages the outside of the flexible fingers near full closure to redirect more of the motor force into the grasp. A pivoting dual-surface fingertip is designed to accommodate a range of object shapes.</p><div class="figures"><figure><a href="fin-ray-sleeve.webp" aria-label="View larger image: Sliding sleeve engagement during closure."><img src="fin-ray-sleeve.webp" alt="Open and closed views of the gripper with a sliding sleeve" loading="lazy"></a><figcaption>Sliding sleeve engagement during closure.</figcaption></figure><figure><a href="fin-ray-tip.webp" aria-label="View larger image: Pivoting fingertip with two contact surfaces."><img src="fin-ray-tip.webp" alt="Cross section of a pivoting dual-surface fingertip" loading="lazy"></a><figcaption>Pivoting fingertip with two contact surfaces.</figcaption></figure></div></section><section class="project-section"><h2>Tendon routing</h2><p>The second concept changes the tendon routing using additional pulleys. The new geometry redirects more of the cable tension toward closing the fingers when the gripper is nearly shut.</p></section>
-      <p class="credit">Yiwen Gao and Xuesi Ma · Household humanoid R&amp;D team</p>
-      <div class="project-next">
-        <a href="index.html"><span aria-hidden="true">←</span> All projects</a>
-        <a href="biomimetic-swimmer.html">Next: Biomimetic Swimmer <span aria-hidden="true">→</span></a>
-      </div>
-    </article></main>
-  <footer class="wrap footer">
-    <span>© 2026 Yiwen Gao</span>
-    <a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a>
-  </footer>
+  <article class="project portfolio-project">
+    <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+    <header class="page-head"><h1>Flexible Gripper, Robot ‘Konka-1’</h1></header>
+    <nav class="on-this-page" aria-label="Gripper concepts"><a href="#concept-1">Concept 1</a><a href="#concept-2">Concept 2</a></nav><section class="project-section"><h2 id="concept-1">Concept 1 for the Flexible Gripper, Robot ‘Konka-1’</h2><p class="project-byline">Yiwen Gao, Xuesi Ma, Chengdu Humanoid Robot Innovation Center Co., Ltd.</p><figure class="project-figure portrait-figure"><a href="fin-ray-sleeve.webp"><img src="fin-ray-sleeve.webp" alt="Figure 8: Gripper in relaxed (upper) and clamped (lower) states" loading="lazy" decoding="async"></a><figcaption>Figure 8: Gripper in relaxed (upper) and clamped (lower) states</figcaption></figure><h3>Design Concept</h3><p>This solution increases the clamping force of the flexible gripper as the two fingers approach closure by introducing a sleeve mechanism.</p><p>During the clamping process, the motor pulls the inner elastic steel sheets backward via a rope mechanism and simultaneously drives the sleeve forward through a gear-rack mechanism. As the gripper nears full closure, the sleeve begins to contact and apply pressure to the outer elastic steel sheets, thereby compensating for the clamping force.</p><h3>Force Analysis</h3><figure class="project-figure portrait-figure"><a href="fin-ray-force.webp"><img src="fin-ray-force.webp" alt="Figure 9: Force analysis diagram of the gripper" loading="lazy" decoding="async"></a><figcaption>Figure 9: Force analysis diagram of the gripper</figcaption></figure><h4>Effectiveness of Clamping Force Compensation:</h4><p>Based on the mechanism design, the force relationships can be described as follows:</p><div class="formula"><math display="block"><msub><mi>F</mi><mtext>clamp</mtext></msub><mo>=</mo><mfrac><mi>b</mi><mrow><mi>b</mi><mo>+</mo><mi>d</mi></mrow></mfrac><mo>×</mo><msub><mi>F</mi><mn>3</mn></msub><mo>≈</mo><mn>1.2</mn><msub><mi>F</mi><mn>1</mn></msub></math><span>(1)</span></div>
+        <div class="formula"><math display="block"><msub><mi>F</mi><mn>3</mn></msub><mo>=</mo><msub><mi>F</mi><mn>1</mn></msub><mi mathvariant="normal">cot</mi><mn>15</mn><mo>°</mo><mo>≈</mo><mn>3.73</mn><msub><mi>F</mi><mn>1</mn></msub></math><span>(2)</span></div><p>When the gripper’s two fingers are about to close without the compensation mechanism:</p><div class="formula"><math display="block"><msubsup><mi>F</mi><mtext>clamp</mtext><mo>′</mo></msubsup><mo>=</mo><msubsup><mi>F</mi><mn>3</mn><mo>′</mo></msubsup><mo>≈</mo><msubsup><mi>F</mi><mn>1</mn><mo>′</mo></msubsup><mi mathvariant="normal">sin</mi><mi>α</mi><mo>&lt;</mo><mn>0.15</mn><msubsup><mi>F</mi><mn>1</mn><mo>′</mo></msubsup></math><span>(3)</span></div><p>As shown in the force analysis above, the efficiency of converting motor power into clamping force by the compensation mechanism (approx. 1.2) is significantly higher than the main driving mechanism (less than 0.15) when the fingers are nearly closed. Therefore, the compensation is effective.</p><h3>Fingertip Mechanism</h3><figure class="project-figure portrait-figure"><a href="fin-ray-tip.webp"><img src="fin-ray-tip.webp" alt="Figure 10: Dual-Surface Fingertip Mechanism" loading="lazy" decoding="async"></a><figcaption>Figure 10: Dual-Surface Fingertip Mechanism</figcaption></figure><p><strong>Dual-Surface Design:</strong> The two surfaces form a 45° angle with each other, and the entire fingertip can passively rotate around its base within a range of 15°–20°. This design allows the fingertip to better adapt to various sizes and shapes of objects being gripped, ensuring that one of the surfaces always achieves good contact with the object.</p></section><section class="project-section"><h2 id="concept-2">Concept 2 for the Flexible Gripper, Robot ‘Konka-1’</h2><p class="project-byline">Yiwen Gao, Xuesi Ma, Chengdu Humanoid Robot Innovation Center Co., Ltd.</p><figure class="project-figure "><a href="fin-ray-tendon.webp"><img src="fin-ray-tendon.webp" alt="Figure 11: Gripper in relaxed (left) and clamped (right) states" loading="lazy" decoding="async"></a><figcaption>Figure 11: Gripper in relaxed (left) and clamped (right) states</figcaption></figure><p>This concept increases the clamping force as the two fingers are about to close by replacing the inner elastic sheet with a rope drive mechanism. By introducing two outer pulleys, the angle between the rope and the elastic sheet is increased, thereby avoiding the issue of the motor power being insufficiently directed towards the clamping force when the fingers are nearly closed.</p></section>
+    <div class="project-next">
+      <a href="index.html">← All projects</a>
+      <a href="underactuated-gripper.html">Next: Seven-Degree-of-Freedom Underactuated Gripper →</a>
+    </div>
+  </article></main>
+  <footer class="wrap footer"><span>© 2026 Yiwen Gao</span><a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a></footer>
 </body>
 </html>

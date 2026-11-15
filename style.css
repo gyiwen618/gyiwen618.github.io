@@ -31,7 +31,7 @@ h1 { font-size: clamp(2.18rem, 5vw, 3.55rem); line-height: 1.06; letter-spacing:
 .project-grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 31px 25px; }
 .tile-link { text-decoration: none; display: block; border-radius: 4px; height: 100%; }
 .tile-media { position: relative; display: block; overflow: hidden; background: var(--surface); aspect-ratio: 10 / 7; border-radius: 4px; }
-.tile-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 240ms ease; }
+.tile-media img { width: 100%; height: 100%; object-fit: contain; transition: transform 240ms ease; }
 .tile-underactuated-gripper .tile-media img { object-position: 28% center; }
 .tile-konka-head .tile-media img { object-position: 35% center; }
 .tile-flexible-gripper .tile-media img, .tile-biomimetic-swimmer .tile-media img { object-fit: contain; padding: 8%; mix-blend-mode: multiply; }
@@ -105,3 +105,26 @@ figcaption { font-size: .86rem; margin-top: 8px; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
 }
+
+.tile h2 { margin-top: 12px; }
+.tile-media { background: #f0f2ee; }
+.tile-media img { mix-blend-mode: multiply; }
+.tile-bearing-test-rig .tile-media img { padding: 6%; }
+.portfolio-project h1 { font-size: clamp(1.92rem, 4.5vw, 3.1rem); line-height: 1.13; }
+.project-byline { font-size: .96rem; color: var(--muted); margin-top: 7px; }
+.project-byline + .project-byline { margin-top: 3px; }
+.project-figure { max-width: 770px; margin: 23px auto; }
+.project-figure img { height: auto; max-height: 590px; object-fit: contain; background: #fff; }
+.project-figure.portrait-figure { max-width: 560px; }
+.project-figure.portrait-figure img { width: auto; max-width: 100%; margin-inline: auto; }
+.project-section h3 { margin-top: 24px; }
+.project-section h4 { margin: 20px 0 8px; }
+.project-section p { margin-block: 10px; }
+.project-section li + li { margin-top: 7px; }
+.on-this-page { display: flex; gap: 24px; border-block: 1px solid var(--rule); }
+.on-this-page a { padding-block: 10px; color: var(--accent); }
+.formula { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center; margin: 16px auto; max-width: 62ch; }
+.thesis-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-block: 24px; }
+.thesis-stats div { border-top: 1px solid var(--rule); padding: 10px 0; }
+.thesis-stats dt { color: var(--muted); font-size: .9rem; }
+.thesis-stats dd { margin: 0; font-size: clamp(1.2rem, 4.5vw, 1.8rem); font-weight: 650; }

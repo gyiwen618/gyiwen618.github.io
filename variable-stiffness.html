@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A cable driven arm that changes its stiffness through its transmission geometry.">
+  <meta name="description" content="Novel Transmission Employing Kinematic Stiffening and N+1 Actuation">
   <meta name="theme-color" content="#fafbf8">
-  <title>Variable Stiffness Manipulator — Yiwen Gao</title>
+  <title>Novel Transmission Employing Kinematic Stiffening and N+1 Actuation — Yiwen Gao</title>
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,26 +14,19 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html">Yiwen Gao</a>
-      <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav>
+      <nav aria-label="Main navigation"><a href="index.html">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav>
     </div>
   </header>
   <main id="main" class="wrap">
-    <article class="project">
-      <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
-      <header class="page-head">
-        <p class="eyebrow">Stanford University · Summer research · 2025</p>
-        <h1>Variable Stiffness Manipulator</h1>
-        <p class="lead">A cable driven arm that changes its stiffness through its transmission geometry.</p>
-      </header><figure class=wide><a href="vsm-prototype.webp" aria-label="View larger image: Prototype with three variable stiffness modules."><img src="vsm-prototype.webp" alt="Annotated prototype of the two degree of freedom cable driven arm" loading="lazy"></a><figcaption>Prototype with three variable stiffness modules.</figcaption></figure><section class="project-section"><h2>Design</h2><p>I designed a variable stiffness module around a torsion spring and floating pulleys. Cable tension rotates the pulley assembly, changing the cable path and creating a nonlinear relationship between tension and displacement. We integrated three modules into a two joint arm using an N+1 actuation layout.</p><div class="figures"><figure><a href="vsm-mechanism.webp" aria-label="View larger image: Module geometry in its compliant and stiff states."><img src="vsm-mechanism.webp" alt="Diagram showing the variable stiffness module in low and high tension states" loading="lazy"></a><figcaption>Module geometry in its compliant and stiff states.</figcaption></figure><figure><a href="vsm-module-tests.webp" aria-label="View larger image: Measured tension–displacement curves compared with the theoretical model."><img src="vsm-module-tests.webp" alt="Measured and theoretical cable tension against cable displacement" loading="lazy"></a><figcaption>Measured tension–displacement curves compared with the theoretical model.</figcaption></figure></div></section><section class="project-section"><h2>Control and testing</h2><p>Joint position was controlled with PID feedback. A separate cable co-activation command adjusted internal tension and modulated the overall stiffness. The prototype demonstrated roughly a sevenfold increase in endpoint stiffness across the tested range, along with a shift in dominant natural frequency.</p><div class="figures"><figure><a href="vsm-control.webp" aria-label="View larger image: Joint position feedback and cable co-activation."><img src="vsm-control.webp" alt="Block diagram of joint position feedback and cable co-activation" loading="lazy"></a><figcaption>Joint position feedback and cable co-activation.</figcaption></figure><figure><a href="vsm-stiffness.webp" aria-label="View larger image: Endpoint stiffness versus commanded co-activation force."><img src="vsm-stiffness.webp" alt="Plot of measured endpoint stiffness versus commanded co-activation force" loading="lazy"></a><figcaption>Endpoint stiffness versus commanded co-activation force.</figcaption></figure></div></section>
-      <p class="credit">Yiwen Gao, Connor Yako, Shenli Yuan, and J. Kenneth Salisbury · Salisbury Robotics Lab</p>
-      <div class="project-next">
-        <a href="index.html"><span aria-hidden="true">←</span> All projects</a>
-        <a href="underactuated-gripper.html">Next: Underactuated Three-Finger Gripper <span aria-hidden="true">→</span></a>
-      </div>
-    </article></main>
-  <footer class="wrap footer">
-    <span>© 2026 Yiwen Gao</span>
-    <a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a>
-  </footer>
+  <article class="project portfolio-project">
+    <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+    <header class="page-head"><h1>Novel Transmission Employing Kinematic Stiffening and N+1 Actuation</h1><p class="project-byline">Yiwen Gao, Connor Yako, Shenli Yuan, J Kenneth Salisbury</p><p class="project-byline">Summer Research, Salisbury Robotics Lab, Stanford University</p></header>
+    <figure class="project-figure main-figure"><a href="vsm-prototype.webp"><img src="vsm-prototype.webp" alt="Figure 1: Prototype of the 2-DoF N+1 cable-driven transmission" loading="lazy" decoding="async"></a><figcaption>Figure 1: Prototype of the 2-DoF N+1 cable-driven transmission</figcaption></figure><section class="project-section"><h2>Project Overview</h2><p>This study addresses the critical conflict in robotic design between high stiffness for precision and com￾pliance for safety. We developed a novel method to modulate the intrinsic mechanical stiffness of a robotic mechanism, enabling it to transition between a "soft" state for safe human interaction and a "stiff" state for high-load tasks.</p></section><section class="project-section"><h2>Key Innovation: Variable Stiffness Mechanism (VSM)</h2><figure class="project-figure "><a href="vsm-mechanism.webp"><img src="vsm-mechanism.webp" alt="Figure 2: Working principle of the variable stiffness mechanism. (a) The mechanism in its compliant, low-tension state. (b) The mechanism in its stiff, high-tension state. (c) An annotated diagram identifying the key components." loading="lazy" decoding="async"></a><figcaption>Figure 2: Working principle of the variable stiffness mechanism. (a) The mechanism in its compliant, low-tension state. (b) The mechanism in its stiff, high-tension state. (c) An annotated diagram identifying the key components.</figcaption></figure><p>The core of this design is a non-linear transmission mechanism based on tension-induced geometric stiffening.</p><ul><li><strong>Working Principle:</strong> A rotating bar with floating pulleys is constrained by a torsion spring. As cable tension increases, the bar rotates, reducing the effective cable length and geometrically in￾creasing the stiffness.</li><li><strong>Result:</strong> This allows for a wide dynamic range of stiffness using simple, passive mechanical com￾ponents.</li></ul></section><section class="project-section"><h2>The Relationship between cable tension (T) and change in cable path length (∆L)</h2><h3>Theoretical Analysis:</h3><figure class="project-figure "><a href="vsm-model.webp"><img src="vsm-model.webp" alt="Figure 3: Theoretical analysis results" loading="lazy" decoding="async"></a><figcaption>Figure 3: Theoretical analysis results</figcaption></figure><h3>Experiment:</h3><figure class="project-figure "><a href="vsm-module-tests.webp"><img src="vsm-module-tests.webp" alt="Figure 4: Experiment results" loading="lazy" decoding="async"></a><figcaption>Figure 4: Experiment results</figcaption></figure></section><section class="project-section"><h2>System Architecture &amp; Performance</h2><p>We integrated this VSM into a 2-DoF robotic manipulation using an N+1 cable-driven actuation scheme (3 cables driving 2 joints).</p><ul><li><strong>Hybrid Control Strategy:</strong> The positions of the two joints <i>q</i><sub>1,des</sub>, <i>q</i><sub>2,des</sub> are controlled by PID closed-loop control, while the co-activation force <i>f</i><sub>b</sub> (shared internal tension of the cables) is under open-loop control. Three parameters can be controlled independently.</li></ul><p>The experiment has validated that, by controlling the co-activation force <i>f</i><sub>b</sub>, we can control the system’s overall stiffness. Therefore, the overall stiffness of the system can be controlled indepen￾dently of its position.</p><figure class="project-figure "><a href="vsm-control.webp"><img src="vsm-control.webp" alt="Figure 5: Control Strategy Diagram" loading="lazy" decoding="async"></a><figcaption>Figure 5: Control Strategy Diagram</figcaption></figure><ul><li><strong>Experimental Validation:</strong> A physical prototype was fabricated and tested. The results confirmed a 7-fold increase in endpoint stiffness (overall stiffness) and a corresponding shift in the system’s dominant natural frequency under co-activation. This shows the system’s ability to effectively modulate compliance on demand.</li></ul><figure class="project-figure "><a href="vsm-stiffness.webp"><img src="vsm-stiffness.webp" alt="Figure 6: Experimental results showing the relationship between the overall stiffness (K∗) and the com￾manded co-activation force (fb)." loading="lazy" decoding="async"></a><figcaption>Figure 6: Experimental results showing the relationship between the overall stiffness (<i>K</i><sup>∗</sup>) and the com￾manded co-activation force (<i>f</i><sub>b</sub>).</figcaption></figure></section>
+    <div class="project-next">
+      <a href="index.html">← All projects</a>
+      <a href="konka-head.html">Next: Head and Neck, Robot ‘Konka-1’ →</a>
+    </div>
+  </article></main>
+  <footer class="wrap footer"><span>© 2026 Yiwen Gao</span><a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a></footer>
 </body>
 </html>
