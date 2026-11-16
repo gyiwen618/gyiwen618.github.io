@@ -75,6 +75,8 @@ figcaption { font-size: .86rem; margin-top: 8px; color: var(--muted); }
 .about-links a, .cv-email { color: var(--accent); font-weight: 630; }
 .about-figure { padding: 9px 9px 12px; background: var(--surface); border-radius: 5px; }
 .about-figure figcaption { padding-inline: 4px; }
+.about-portrait { width: min(100%, 300px); justify-self: center; }
+.about-portrait img { height: auto; }
 .cv-email { display: inline-block; margin-top: 8px; }
 .cv section { margin-block: 28px; }
 .cv-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-top: 1px solid var(--rule); padding: 10px 0; }
