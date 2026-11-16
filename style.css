@@ -47,7 +47,8 @@ h1 { font-size: clamp(2.18rem, 5vw, 3.55rem); line-height: 1.06; letter-spacing:
 .tile p { margin-top: 5px; color: var(--muted); font-size: .91rem; line-height: 1.45; max-width: 39ch; }
 .footer { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 60px; padding: 20px 0 27px; border-top: 1px solid var(--rule); color: var(--muted); font-size: .87rem; }
 .footer a { text-decoration: none; }
-.project, .cv { max-width: 860px; margin-inline: auto; }
+.project { max-width: 1080px; margin-inline: auto; }
+.cv { max-width: 860px; margin-inline: auto; }
 .back { display: inline-block; margin: 32px 0 0; text-decoration: none; color: var(--muted); font-size: .92rem; }
 .back span { margin-right: 5px; }
 .page-head { margin-block: clamp(36px, 6vw, 75px) 30px; }
@@ -61,7 +62,8 @@ figure.wide img { max-height: 520px; object-fit: contain; }
 figcaption { font-size: .86rem; margin-top: 8px; color: var(--muted); }
 .project-section { margin: 38px 0; }
 .project-section h2, .cv h2 { font-size: 1.43rem; line-height: 1.23; letter-spacing: -.025em; margin-bottom: 8px; }
-.project-section p, .prose p { max-width: 69ch; }
+.project .lead { max-width: none; }
+.prose p { max-width: 69ch; }
 .figures { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 16px; margin-top: 20px; }
 .figures.single { grid-template-columns: minmax(0, 1fr); }
 .figures img { max-height: 405px; object-fit: contain; }
@@ -136,12 +138,13 @@ figcaption { font-size: .86rem; margin-top: 8px; color: var(--muted); }
 .tile-media .cover-stack { display: grid; grid-template-rows: 42% 58%; width: 100%; height: 100%; overflow: hidden; }
 .tile-media .cover-stack img { width: 100%; height: 100%; object-fit: contain; padding: 3px 6px; mix-blend-mode: normal; }
 .tile-bearing-test-rig .tile-media img { padding: 0; object-fit: cover; mix-blend-mode: normal; }
-.project-cover-pair { display: grid; grid-template-rows: auto auto; gap: 12px; margin: 20px auto 32px; width: min(100%, 780px); }
+.project-cover-pair { display: grid; gap: 12px; margin: 20px auto 32px; width: min(100%, 770px); }
+.project-cover-pair figcaption { margin-top: 0; }
 .project-cover-pair img { display: block; width: 100%; height: auto; max-height: 280px; object-fit: contain; background: #fff; border-radius: 4px; }
 .bearing-cover-figure { width: min(100%, 750px); }
 .bearing-cover-figure img { width: 100%; max-height: 520px; object-fit: cover; }
-.project-video { display: block; width: 100%; max-height: 560px; background: #111; border-radius: 4px; }
+.project-video { display: block; width: 100%; max-width: 770px; height: auto; margin-inline: auto; background: #111; border-radius: 4px; }
 
 .tile-bird-waldo .tile-media img { object-fit: cover; mix-blend-mode: normal; }
-.portrait-video { max-width: 420px; margin-inline: auto; }
+.portrait-video { max-width: 315px; }
 .project-video + p { margin-top: 24px; }
