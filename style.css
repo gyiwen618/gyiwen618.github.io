@@ -139,3 +139,7 @@ figcaption { font-size: .86rem; margin-top: 8px; color: var(--muted); }
 .bearing-cover-figure { width: min(100%, 750px); }
 .bearing-cover-figure img { width: 100%; max-height: 520px; object-fit: cover; }
 .project-video { display: block; width: 100%; max-height: 560px; background: #111; border-radius: 4px; }
+
+.tile-bird-waldo .tile-media img { object-fit: cover; mix-blend-mode: normal; }
+.portrait-video { max-width: 420px; margin-inline: auto; }
+.project-video + p { margin-top: 24px; }
