@@ -11,16 +11,16 @@
 </head>
 <body>
   <a href="#main" class="skip">Skip to content</a>
-  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="index.html">Yiwen Gao</a><nav aria-label="Main navigation"><a href="index.html">Projects</a><a href="about.html">About</a><a href="cv.html">CV</a></nav></div></header>
+  <header class="site-header"><div class="wrap header-inner"><a class="brand" href="./">Yiwen Gao</a><nav aria-label="Main navigation"><a href="./">About</a><a href="projects.html">Projects</a><a href="cv.html">CV</a></nav></div></header>
   <main id="main" class="wrap"><article class="project portfolio-project">
-    <a class="back" href="index.html"><span aria-hidden="true">←</span> All projects</a>
+    <a class="back" href="projects.html"><span aria-hidden="true">←</span> All projects</a>
     <header class="page-head"><h1>Bird-Inspired Waldo System</h1><p class="project-byline">Yiwen Gao · MEAM 5100 Design of Mechatronic Systems · University of Pennsylvania · October 2026</p><p class="lead">A handheld input mechanism maps wing and tail movements to a servo-driven bird, combining mechanical design, sensor calibration, embedded programming, and hardware integration.</p></header>
     <figure id="figure-1" class="project-figure main-figure"><a href="bird-waldo-prototype.jpg"><img src="bird-waldo-prototype.jpg" alt="Fabricated bird with two laser-cut wings, tail, and three SG90 servos" loading="eager" decoding="async"></a><figcaption>Figure 1. Fabricated bird output mechanism.</figcaption></figure>
     <section class="project-section"><h2>Mechanism and Fabrication</h2><p>The input device uses three potentiometers to sense left-wing, right-wing, and tail motion. A gear mechanism couples the two wing inputs so they move symmetrically, giving the system two independent motions: wing flapping and tail rotation. On the output side, three SG90 servos actuate the two wings and tail. I designed the assemblies in CAD and laser-cut the wings and body plates from 1/8-inch MDF.</p></section>
     <section class="project-section"><h2>Sensing and Control</h2><p>I characterized the potentiometers across their 270° travel and mapped their ADC readings to servo commands on an ItsyBitsy microcontroller. The servos receive 50 Hz PWM signals. To support the motor current, I powered them from an external 5 V supply and connected its ground to the controller ground for a common signal reference.</p></section>
     <section class="project-section"><h2>Engineering Analysis</h2><p>Using the wing mass and center of mass from the CAD model, I checked the servo against the maximum static gravitational torque. After an estimated 20% mechanical loss and a safety factor of three, the available torque was about 5.55 times the requirement. I also estimated the worst-case current draw to plan the power supply.</p></section>
     <section class="project-section" aria-labelledby="bird-video"><h2 id="bird-video">Prototype Demonstration</h2><p>The video below shows the finished bird responding to the input mechanism's wing and tail movements.</p><video controls playsinline preload="metadata" class="project-video" poster="bird-waldo-demo-poster.jpg" width="960" height="540" aria-label="Bird-inspired Waldo system demonstration"><source src="bird-waldo-demo.mp4" type="video/mp4"><a href="bird-waldo-demo.mp4">Download the demonstration video</a></video></section>
-    <div class="project-next"><a href="index.html">← All projects</a></div>
+    <div class="project-next"><a href="projects.html">← All projects</a></div>
   </article></main>
   <footer class="wrap footer"><span>© 2026 Yiwen Gao</span><a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a></footer>
 </body>

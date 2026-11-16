@@ -71,6 +71,8 @@ figcaption { font-size: .86rem; margin-top: 8px; color: var(--muted); }
 .project-next { border-top: 1px solid var(--rule); padding-top: 18px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; font-size: .91rem; }
 .project-next a, .about-links a { text-decoration: none; }
 .about { max-width: 980px; margin-inline: auto; }
+.about .lead { max-width: none; text-wrap: pretty; }
+.about .prose a { color: var(--accent); }
 .about-grid { display: grid; grid-template-columns: 1.25fr 1fr; align-items: start; gap: 36px; }
 .prose p + p { margin-top: 15px; }
 .about-links { display: flex; gap: 20px; flex-wrap: wrap; }
