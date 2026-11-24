@@ -1,22 +1,25 @@
-.cad-viewer { margin: 24px auto 32px; max-width: 770px; border: 1px solid var(--rule, #dce2d9); border-radius: 8px; overflow: hidden; background: #f3f5f1; }
+.cad-viewer { margin: 24px auto 32px; max-width: 770px; border: 0; background: transparent; }
 .cad-viewer [hidden] { display: none !important; }
-.cad-viewer__stage { position: relative; height: clamp(320px, 55vw, 520px); background: radial-gradient(ellipse at 50% 42%, #fff 0%, #f1f4ef 78%); }
-.cad-viewer model-viewer { display: block; width: 100%; height: 100%; --poster-color: transparent; --progress-bar-color: #295747; }
+.cad-viewer__stage { position: relative; height: clamp(320px, 55vw, 520px); background: transparent; }
+.cad-viewer model-viewer { display: block; width: 100%; height: 100%; background: transparent; --poster-color: transparent; --progress-bar-height: 0px; }
 .cad-viewer model-viewer:focus-visible { outline: 2px solid #295747; outline-offset: -4px; }
 .cad-viewer__status { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px; text-align: center; color: var(--muted, #4f5e56); font-size: 1rem; pointer-events: none; }
 .cad-viewer__status button { pointer-events: auto; }
 .cad-viewer__spinner { width: 28px; height: 28px; border: 2px solid #dce2d9; border-top-color: #295747; border-radius: 50%; animation: cad-spin .9s linear infinite; }
-.cad-viewer__toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px 16px; padding: 12px 16px; border-top: 1px solid var(--rule, #dce2d9); background: var(--paper, #fafbf8); }
-.cad-viewer__hint { color: var(--muted, #4f5e56); font-size: .875rem; margin: 0 !important; }
-.cad-viewer__buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+.cad-viewer__toolbar { position: absolute; inset: 0 0 auto; z-index: 2; display: flex; align-items: center; justify-content: flex-end; gap: 12px; pointer-events: none; }
+.cad-viewer__hint { color: var(--muted, #4f5e56); font-size: .67rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; margin: 0 !important; }
+.cad-viewer__buttons { display: flex; gap: 8px; pointer-events: auto; }
 .cad-viewer button, .cad-file-label { appearance: none; border: 1px solid #c8d3c7; background: #fff; color: #234d3e; border-radius: 5px; font: inherit; font-size: .875rem; line-height: 1.4; padding: 7px 12px; cursor: pointer; }
 .cad-viewer button:hover, .cad-file-label:hover { background: #eaf0e7; }
 .cad-viewer button:focus-visible, .cad-file-label:focus-within { outline: 2px solid #295747; outline-offset: 3px; }
 .cad-viewer button:disabled { cursor: default; opacity: .45; }
-.cad-viewer__caption { padding: 0 16px 13px; background: var(--paper, #fafbf8); color: var(--muted, #4f5e56); font-size: .875rem; margin: 0; }
+.cad-viewer__buttons button { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border-radius: 50%; background: var(--paper, #fafbf8); font-size: 1.3rem; line-height: 1; }
+.cad-viewer__buttons [data-cad-reset] { width: auto; padding-inline: 13px; border-radius: 999px; font-size: .82rem; font-weight: 600; }
+.cad-viewer__caption { padding: 0; background: transparent; color: var(--muted, #4f5e56); font-size: .875rem; margin: 8px 0 0; }
 .cad-viewer__caption a { display: inline; }
 @keyframes cad-spin { to { transform: rotate(360deg); } }
-@media (max-width: 580px) { .cad-viewer__stage { height: 360px; } .cad-viewer__toolbar { align-items: flex-start; flex-direction: column; } }
+@media (max-width: 580px) { .cad-viewer__stage { height: 360px; } }
+@media (max-width: 420px) { .cad-viewer__hint { display: none; } }
 @media (prefers-reduced-motion: reduce) { .cad-viewer__spinner { animation: none; } }
 
 /* Keep the opening prototype photograph and CAD view on the same row. */
@@ -32,7 +35,6 @@
 .stanford-overview-media .main-figure > a { aspect-ratio: 4 / 3; }
 .stanford-overview-media .main-figure img { height: 100%; max-height: none; object-fit: contain; }
 .stanford-overview-media .cad-viewer__stage { width: 100%; height: auto; aspect-ratio: 4 / 3; }
-.stanford-overview-media .cad-viewer__toolbar { align-items: flex-start; flex-direction: column; }
 @media (max-width: 760px) {
   .stanford-overview-media { grid-template-columns: minmax(0, 1fr); }
   .cad-desktop-direction { display: none; }
