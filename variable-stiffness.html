@@ -1,16 +1,58 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-cad-project-page>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Novel Transmission Employing Kinematic Stiffening and N+1 Actuation">
   <meta name="theme-color" content="#fafbf8">
   <title>Novel Transmission Employing Kinematic Stiffening and N+1 Actuation — Yiwen Gao</title>
+  <style>
+    .cad-page-loader { display: none; }
+    html.cad-page-loading { overflow: hidden; background: #fafbf8; }
+    .cad-page-loading #cad-page-content { opacity: 0; pointer-events: none; }
+    .cad-page-loading .cad-page-loader { display: grid; position: fixed; inset: 0; z-index: 100; place-items: center; background: #fafbf8; color: #4f5e56; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-align: center; }
+    .cad-page-loader__spinner { display: block; width: 28px; height: 28px; margin: 0 auto 14px; border: 2px solid #dce2d9; border-top-color: #295747; border-radius: 50%; animation: cad-page-spin .9s linear infinite; }
+    .cad-page-loader p { margin: 0; }
+    @keyframes cad-page-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .cad-page-loader__spinner { animation: none; } }
+  </style>
+  <script>
+    (() => {
+      const page = document.documentElement;
+      page.classList.add('cad-page-loading');
+      let guard;
+      const reveal = () => {
+        clearTimeout(guard);
+        document.removeEventListener('cad-page-reveal', reveal);
+        page.classList.remove('cad-page-loading');
+        const content = document.getElementById('cad-page-content');
+        if (content) content.inert = false;
+      };
+      document.addEventListener('cad-page-reveal', reveal, { once: true });
+      // Keep the article accessible if the viewer script never starts.
+      guard = setTimeout(() => {
+        const viewer = document.querySelector('[data-cad-viewer]');
+        if (viewer) { viewer.dataset.state = 'error'; viewer.setAttribute('aria-busy', 'false'); }
+        const message = document.querySelector('[data-cad-message]');
+        if (message) message.textContent = 'The interactive model is unavailable. You can still read the project and download the model.';
+        const spinner = document.querySelector('[data-cad-spinner]');
+        if (spinner) spinner.hidden = true;
+        reveal();
+      }, 30000);
+    })();
+  </script>
+  <noscript><style>[data-cad-status] { display: none !important; }</style></noscript>
+  <link rel="preload" href="assets/models/stanford-assembly.glb" as="fetch" crossorigin="anonymous">
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="assets/viewer/cad-viewer.css?v=4">
+  <link rel="stylesheet" href="assets/viewer/cad-viewer.css?v=5">
 </head>
 <body>
+  <div class="cad-page-loader" role="status" aria-live="polite">
+    <div><span class="cad-page-loader__spinner" aria-hidden="true"></span><p data-cad-page-message>Loading project…</p></div>
+  </div>
+  <div id="cad-page-content">
+  <script>document.getElementById('cad-page-content').inert = document.documentElement.classList.contains('cad-page-loading');</script>
   <a href="#main" class="skip">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -65,6 +107,7 @@
     </div>
   </article></main>
   <footer class="wrap footer"><span>© 2026 Yiwen Gao</span><a href="mailto:gyiwen618@gmail.com">Email <span aria-hidden="true">↗</span></a></footer>
-  <script type="module" src="assets/viewer/cad-viewer.js?v=3"></script>
+  </div>
+  <script type="module" src="assets/viewer/cad-viewer.js?v=5"></script>
 </body>
 </html>

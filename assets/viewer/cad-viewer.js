@@ -43,6 +43,10 @@ function applyCADPalette(viewer) {
   }
 }
 
+function revealProjectPage() {
+  document.dispatchEvent(new Event('cad-page-reveal'));
+}
+
 let viewerLibrary;
 
 function loadLibrary() {
@@ -95,13 +99,14 @@ export function mountViewer(root) {
     clearTimeout(timer);
     active = false;
     setState('error', text);
+    revealProjectPage();
   }
 
   function startTimer() {
     clearTimeout(timer);
     timer = setTimeout(() => {
       failed('The model is taking longer to load. Check your connection, then try again.');
-    }, 90000);
+    }, 25000);
   }
 
   async function load(source = pendingSource) {
@@ -126,6 +131,8 @@ export function mountViewer(root) {
     const progress = event.detail.totalProgress;
     if (root.dataset.state === 'loading' && progress < 1) {
       message.textContent = `Loading interactive 3D model… ${Math.round(progress * 100)}%`;
+      const pageMessage = document.querySelector('[data-cad-page-message]');
+      if (pageMessage) pageMessage.textContent = `Loading project… ${Math.round(progress * 100)}%`;
     }
   });
   model.addEventListener('load', () => {
@@ -133,6 +140,8 @@ export function mountViewer(root) {
     clearTimeout(timer);
     active = false;
     setState('ready', 'Interactive model ready.');
+    // Let the recolored model paint before the project page fades in.
+    requestAnimationFrame(() => requestAnimationFrame(revealProjectPage));
   });
   model.addEventListener('error', () => {
     failed('The model could not load. Try again, or download the CAD model below.');
@@ -147,7 +156,14 @@ export function mountViewer(root) {
   });
   root.querySelector('[data-cad-zoom-in]').addEventListener('click', () => model.zoom(2));
   root.querySelector('[data-cad-zoom-out]').addEventListener('click', () => model.zoom(-2));
-  retry.addEventListener('click', () => { void load(); });
+  retry.addEventListener('click', () => {
+    // The renderer can cache a rejected model request; retry with a fresh URL.
+    const source = new URL(pendingSource, document.baseURI);
+    if (source.protocol === 'http:' || source.protocol === 'https:') {
+      source.searchParams.set('cad-retry', String(Date.now()));
+    }
+    void load(source.href);
+  });
 
   if (fileInput) {
     fileInput.addEventListener('change', async () => {
@@ -169,7 +185,10 @@ export function mountViewer(root) {
   }
 
   if (pendingSource) {
-    if ('IntersectionObserver' in window) {
+    if (document.documentElement.hasAttribute('data-cad-project-page')) {
+      // A page waiting on this model must load it even when opened at an anchor.
+      void load();
+    } else if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver(entries => {
         if (entries.some(entry => entry.isIntersecting)) {
           observer.disconnect();
