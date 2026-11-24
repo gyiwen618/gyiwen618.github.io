@@ -2,6 +2,47 @@
 const HOME_ORBIT = '305deg 65deg 65%';
 // Frame this asymmetric assembly around its visible center, with room to rotate.
 const HOME_TARGET = '-0.144m 1.115m 0.419m';
+// Display colors keyed by the original GLB material names; geometry stays unchanged.
+const CAD_MATERIAL_STYLES = new Map([
+  ["0.372549_0.654902_0.239216_0.000000_0.000000", ["#2f8068"]],
+  ["1.000000_1.000000_1.000000_0.000000_0.000000", ["#a5b2bf"]],
+  ["0.713725_0.772549_0.788235_0.000000_0.000000", ["#51687a", 0.25, 0.5]],
+  ["0.878431_0.949020_1.000000_0.000000_0.000000", ["#799bb0"]],
+  ["0.000000_0.600000_0.000000_0.000000_0.000000", ["#326b4a"]],
+  ["0.000000_1.000000_0.000000_0.000000_0.000000", ["#53a658"]],
+  ["0.615686_0.811765_0.929412_0.000000_0.000000", ["#426987"]],
+  ["0.811765_0.858824_0.898039_0.000000_0.000000", ["#6e8499"]],
+  ["0.498039_0.498039_0.498039_0.000000_0.000000", ["#677484", 0.25, 0.5]],
+  ["0.513725_0.737255_0.407843_0.000000_0.000000", ["#3a8b6b"]],
+  ["0.000000_0.000000_0.000000_0.000000_0.000000", ["#26303b"]],
+  ["0.960784_0.835294_0.470588_0.000000_0.000000", ["#bf903d", 0.25, 0.5]],
+  ["0.894118_0.913725_0.929412_0.000000_0.000000", ["#8297aa", 0.25, 0.5]],
+  ["0.701961_0.701961_0.701961_0.000000_0.000000", ["#8e9ba8", 0.25, 0.5]],
+  ["0.796078_0.905882_0.745098_0.000000_0.000000", ["#659f88"]],
+  ["0.647059_0.647059_0.647059_0.000000_0.000000", ["#596a7b", 0.25, 0.5]],
+  ["0.917647_0.917647_0.917647_0.000000_0.000000", ["#9aa8b5", 0.25, 0.5]],
+  ["0.654902_0.823529_0.576471_0.000000_0.000000", ["#478c73"]],
+  ["0.701961_0.701961_0.701961_0.000000_0.701961", ["#8493a3"]],
+]);
+
+function applyCADPalette(viewer) {
+  for (const material of viewer.model.materials) {
+    const style = CAD_MATERIAL_STYLES.get(material.name);
+    if (!style) continue;
+    const pbr = material.pbrMetallicRoughness;
+    const alpha = pbr.baseColorFactor[3];
+    // CSS strings use sRGB; retain the opacity of transparent covers.
+    pbr.setBaseColorFactor(style[0]);
+    if (alpha < 1) {
+      const color = [...pbr.baseColorFactor];
+      color[3] = alpha;
+      pbr.setBaseColorFactor(color);
+    }
+    pbr.setMetallicFactor(style[1] ?? 0.05);
+    pbr.setRoughnessFactor(style[2] ?? 0.75);
+  }
+}
+
 let viewerLibrary;
 
 function loadLibrary() {
@@ -88,6 +129,7 @@ export function mountViewer(root) {
     }
   });
   model.addEventListener('load', () => {
+    applyCADPalette(model);
     clearTimeout(timer);
     active = false;
     setState('ready', 'Interactive model ready.');
