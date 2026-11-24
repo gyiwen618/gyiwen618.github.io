@@ -1,6 +1,7 @@
 // Interactive GLB viewer. CAD geometry and rendering stay in the visitor's browser.
-const HOME_ORBIT = '305deg 65deg 85%';
-const HOME_TARGET = 'auto auto auto';
+const HOME_ORBIT = '305deg 65deg 65%';
+// Frame this asymmetric assembly around its visible center, with room to rotate.
+const HOME_TARGET = '-0.144m 1.115m 0.419m';
 let viewerLibrary;
 
 function loadLibrary() {

@@ -31,10 +31,9 @@
 .stanford-overview-media .cad-viewer { width: 100%; max-width: none; margin: 0; }
 .stanford-overview-media .main-figure > a { aspect-ratio: 4 / 3; }
 .stanford-overview-media .main-figure img { height: 100%; max-height: none; object-fit: contain; }
-.stanford-overview-media .cad-viewer__stage { height: auto; aspect-ratio: 4 / 3; }
+.stanford-overview-media .cad-viewer__stage { width: 100%; height: auto; aspect-ratio: 4 / 3; }
 .stanford-overview-media .cad-viewer__toolbar { align-items: flex-start; flex-direction: column; }
 @media (max-width: 760px) {
   .stanford-overview-media { grid-template-columns: minmax(0, 1fr); }
-  .stanford-overview-media .cad-viewer__stage { min-height: 300px; }
   .cad-desktop-direction { display: none; }
 }
